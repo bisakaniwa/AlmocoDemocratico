@@ -26,7 +26,7 @@ public class HungryUser {
     @Column(nullable = false, unique = true)
     private String email;
 
-    @Pattern(regexp = "\\d{8,12}")
+    @Pattern(regexp = "\\w{8,12}")
     @Column(nullable = false)
     private String password;
 }
