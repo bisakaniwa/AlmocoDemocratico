@@ -10,6 +10,7 @@ import java.util.Optional;
 
 @RequestMapping("api/v1/user")
 @RestController
+@CrossOrigin({"http://localhost:3000"})
 public class HungryUserController {
     HungryUserService hungryUserService;
     @Autowired
