@@ -5,15 +5,13 @@ import com.dbserver.almoco.democratico.model.Restaurant;
 import com.dbserver.almoco.democratico.service.impl.RestaurantServiceImpl;
 import com.dbserver.almoco.democratico.service.impl.VoteServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
 
 @RestController
 @RequestMapping("/votes")
+@CrossOrigin({"http://localhost:3000"})
 public class VoteController {
     private VoteServiceImpl voteService;
     private RestaurantServiceImpl restaurantService;

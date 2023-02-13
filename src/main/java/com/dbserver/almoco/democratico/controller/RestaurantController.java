@@ -14,6 +14,7 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("api/v1/restaurants")
+@CrossOrigin({"http://localhost:3000"})
 public class RestaurantController {
     private final RestaurantServiceImpl restaurantService;
 
