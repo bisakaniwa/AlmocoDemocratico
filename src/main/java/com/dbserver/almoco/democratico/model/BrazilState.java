@@ -1,5 +1,6 @@
 package com.dbserver.almoco.democratico.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -21,6 +22,7 @@ public class BrazilState {
     private String state;
 
 
+    @JsonIgnore
     @OneToMany(mappedBy = "state",
             cascade = CascadeType.ALL,
             orphanRemoval = true)

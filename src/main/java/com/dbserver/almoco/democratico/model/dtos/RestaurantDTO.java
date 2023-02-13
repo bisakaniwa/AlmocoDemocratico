@@ -25,8 +25,6 @@ public class RestaurantDTO {
 
     private String website;
 
-    private String email;
-
     private int numVotes = 0;
     public RestaurantDTO(Restaurant restaurant) {
         this.name = restaurant.getName();
@@ -38,7 +36,6 @@ public class RestaurantDTO {
         this.city = restaurant.getCity();
         this.cep = restaurant.getCep();
         this.website = restaurant.getWebsite();
-        this.email = restaurant.getEmail();
         this.numVotes = restaurant.getNumVotes();
     }
 }

@@ -30,8 +30,7 @@ public class HungryUser {
     private String password;
 
     @OneToMany(mappedBy = "email",
-            cascade = CascadeType.ALL,
-            orphanRemoval = true)
+            cascade = CascadeType.ALL)
     private List<Restaurant> addedRestaurants = new ArrayList<>();
 
     public String getName() {

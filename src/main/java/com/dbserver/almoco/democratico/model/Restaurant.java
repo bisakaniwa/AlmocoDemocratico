@@ -42,7 +42,7 @@ public class Restaurant {
 
     private String website;
 
-    @Column(name = "email", nullable = false)
+    @Column(name = "email")
     private String email;
 
     @Column(nullable = false)
