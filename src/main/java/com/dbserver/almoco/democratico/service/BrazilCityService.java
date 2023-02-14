@@ -8,6 +8,6 @@ import java.util.Optional;
 public interface BrazilCityService {
 
     List<BrazilCity> findBrazilCityByState(String state);
-    public List<BrazilCity> findCitiesByStateAndCityName(String state, String cityName);
+    public List<BrazilCity> findAllCityNameByStateIgnoreCase(String state);
     BrazilCity create(BrazilCity brazilCity);
 }

@@ -24,8 +24,8 @@ public class BrazilCityServiceImpl implements BrazilCityService {
     }
 
 
-    public List<BrazilCity> findCitiesByStateAndCityName(String state, String cityName) {
-        return brazilCityRepository.findByStateIgnoreCaseAndCityNameContainingIgnoreCase(state, cityName);
+    public List<BrazilCity> findAllCityNameByStateIgnoreCase(String state) {
+        return brazilCityRepository.findAllCityNameByStateIgnoreCase(state);
     }
 
     @Override

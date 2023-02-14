@@ -1,6 +1,5 @@
 package com.dbserver.almoco.democratico.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -14,8 +13,7 @@ import org.apache.commons.lang3.StringUtils;
 public class Restaurant {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @JsonIgnore
-    private Long id;
+    private Long restaurantId;
 
     @Column(nullable = false)
     private String name;
@@ -27,6 +25,9 @@ public class Restaurant {
     private String address;
 
     private String addressComplement;
+
+    @Column(nullable = false)
+    private String state;
 
     @Column(nullable = false)
     private String addressNumber;
@@ -56,12 +57,12 @@ public class Restaurant {
         this.numVotes = numVotes + 1;
     }
 
-    public Long getId() {
-        return id;
+    public Long getRestaurantId() {
+        return restaurantId;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setRestaurantId(Long restaurantId) {
+        this.restaurantId = restaurantId;
     }
 
     public String getName() {
@@ -94,6 +95,14 @@ public class Restaurant {
 
     public void setAddressComplement(String addressComplement) {
         this.addressComplement = StringUtils.lowerCase(addressComplement);
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = StringUtils.upperCase(state);
     }
 
     public String getAddressNumber() {

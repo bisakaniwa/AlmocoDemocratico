@@ -31,9 +31,9 @@ public class BrazilCityController {
         List<BrazilCity> brazilCityListByState = brazilCityService.findBrazilCityByState(state);
         return brazilCityListByState;
     }
-    @GetMapping("/{state}/{cityName}")
-    public List<BrazilCity> getCitiesByStateAndCityName(@PathVariable String state, @PathVariable String cityName) {
-        return brazilCityService.findCitiesByStateAndCityName(state, cityName);
+    @GetMapping("/{state}/all-cities")
+    public List<BrazilCity> getCitiesByStateAndCityName(@PathVariable String state) {
+        return brazilCityService.findAllCityNameByStateIgnoreCase(state);
     }
 
 

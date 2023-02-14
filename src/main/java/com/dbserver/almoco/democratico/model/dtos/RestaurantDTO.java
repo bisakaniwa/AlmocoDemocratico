@@ -7,6 +7,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 public class RestaurantDTO {
+
+    private Long id;
     private String name;
 
     private String description;
@@ -14,6 +16,8 @@ public class RestaurantDTO {
     private String address;
 
     private String addressComplement;
+
+    private String state;
 
     private String addressNumber;
 
@@ -31,11 +35,13 @@ public class RestaurantDTO {
         this.description = restaurant.getDescription();
         this.address = restaurant.getAddress();
         this.addressComplement = restaurant.getAddressComplement();
+        this.state  =restaurant.getState();
         this.addressNumber = restaurant.getAddressNumber();
         this.district = restaurant.getDistrict();
         this.city = restaurant.getCity();
         this.cep = restaurant.getCep();
         this.website = restaurant.getWebsite();
         this.numVotes = restaurant.getNumVotes();
+        this.id = restaurant.getRestaurantId();
     }
 }

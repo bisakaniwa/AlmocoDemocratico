@@ -28,11 +28,12 @@ public class VoteServiceImpl implements VoteService {
         if (voteRepository.existsByHungryUserAndRestaurantAndVoteDateTimeBetween(hungryUser, restaurant,
                 LocalDateTime.of(LocalDate.now(), LocalTime.of(8, 0)),
                 LocalDateTime.of(LocalDate.now(), LocalTime.of(13, 0)))) {
-            throw new RuntimeException("You can only vote once per day for a restaurant.");
+            //TODO trocar mensagem de run
+            throw new RuntimeException("You can only vote once per day for a restaurant or.");
         }
 
         // retrieve the existing restaurant record
-        Optional<Restaurant> existingRestaurantOptional = restaurantRepository.findById(restaurant.getId());
+        Optional<Restaurant> existingRestaurantOptional = restaurantRepository.findById(restaurant.getRestaurantId());
         if (existingRestaurantOptional.isEmpty()) {
             throw new RuntimeException("Restaurant not found");
         }

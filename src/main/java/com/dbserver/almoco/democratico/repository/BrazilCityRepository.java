@@ -11,5 +11,5 @@ public interface BrazilCityRepository extends JpaRepository<BrazilCity, Long> {
 
     List<BrazilCity> findByState(String stateName);
 
-    List<BrazilCity> findByStateIgnoreCaseAndCityNameContainingIgnoreCase(String state, String cityName);
+    List<BrazilCity> findAllCityNameByStateIgnoreCase(String state);
 }

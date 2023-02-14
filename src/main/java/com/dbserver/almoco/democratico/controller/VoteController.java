@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.time.LocalDateTime;
 
 @RestController
-@RequestMapping("/votes")
+@RequestMapping("/api/v1/votes")
 @CrossOrigin({"http://localhost:3000"})
 public class VoteController {
     private VoteServiceImpl voteService;
@@ -21,7 +21,7 @@ public class VoteController {
         this.restaurantService = restaurantService;
     }
 
-    @PostMapping
+    @PostMapping("/register")
     public void vote(@RequestBody VoteRequest voteRequest, HungryUser user) {
         Restaurant restaurant = restaurantService.findById(voteRequest.getRestaurantId())
                 .orElseThrow(() -> new RuntimeException("Restaurant not found."));
